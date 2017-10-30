@@ -1,5 +1,5 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
 {{outlet}}
+
+{{#each model.food as |food|}}
+  <h1>{{food.food}}</h1>
+{{/each}}
