@@ -7,7 +7,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route("foods")
+  this.route('index', {path: '/'});
+
+  this.route('members')
+    this.route('ingredients')
+    this.route('recipes')
+    this.route('foods')
+  this.route('foods')
+
+
 });
 
 export default Router;

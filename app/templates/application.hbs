@@ -1,5 +1,7 @@
-{{outlet}}
-
-{{#each model.food as |food|}}
-  <h1>{{food.food}}</h1>
-{{/each}}
+<nav>
+  <h1>K.I.M</h1>
+{{#link-to 'foods'}}foods{{/link-to}}
+</nav>
+<div class="main-content">
+  {{outlet}}
+</div>
