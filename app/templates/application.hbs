@@ -1,7 +1,17 @@
-<nav>
-  <h1>K.I.M</h1>
-{{#link-to 'foods'}}Inventroy{{/link-to}}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h1>KIM</h1>
+    </div>
+  </div>
 </nav>
+
 <div class="main-content">
-  {{outlet}}
+
+  {{#inventory-display
+    model=model
+  }}
+  {{/inventory-display}}
+
+
 </div>

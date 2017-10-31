@@ -1,0 +1,28 @@
+<button {{action "makeShoppingList"}}type="button" name="button">Make Shopping List</button>
+
+<button type="button" class="btn btn-default navbar-btn">Sign in</button>
+
+
+{{#each model.foods as |food|}}
+<div class="">
+  <ul>{{food.food}}</ul>
+  <form class="" action="index.html" method="post">
+    {{food.quantity}}
+  </form>
+</div>
+{{/each}}
+
+{{#each model.recipes as |recipe|}}
+  <ul>
+    {{recipe.recipe}}
+    {{recipe.ingredients}}
+  </ul>
+{{/each}}
+
+
+{{#each list as |list|}}
+ <ul>
+   {{list.name}}
+   {{list.quantity}}
+ </ul>
+{{/each}}
