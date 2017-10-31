@@ -8,11 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', {path: '/'});
-
   this.route('members')
-    this.route('ingredients')
-    this.route('recipes')
-    this.route('foods')
+  this.route('ingredients')
+  this.route('recipes')
   this.route('foods')
 
 
