@@ -1,1 +1,9 @@
-{}
+{
+  "firebase": "flint-books-article",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
