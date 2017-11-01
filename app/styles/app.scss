@@ -78,7 +78,7 @@ h3 {
 }
 
 .list-button:hover {
-  
+
 }
 
 .food {
@@ -105,6 +105,9 @@ h3 {
   max-height: 80vh;
   overflow-x: hidden;
   background-color: $box-color;
+}
+.unselected-recipe-card {
+  background-color:  !important;
 }
 
 .list {

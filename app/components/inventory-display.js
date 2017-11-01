@@ -3,6 +3,18 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   list: [],
 
+  socketIOService: Ember.inject.service('socket-io'),
+  room: 'inventory',
+  url: 'ws://localhost:3000/',
+  init(){
+    this._super(...arguments);
+    let socket = this.get('socketIOService').socketFor(this.get('url'));
+    socket.emit('open', "Hello there");
+    socket.on('message', function(){
+      console.log("anything");
+    })
+  },
+
   actions: {
     makeShoppingList(){
       var recipes = this.get('model.recipes').content
