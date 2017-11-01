@@ -1,28 +1,54 @@
-<button {{action "makeShoppingList"}}type="button" name="button">Make Shopping List</button>
 
-<button type="button" class="btn btn-default navbar-btn">Sign in</button>
-
-
-{{#each model.foods as |food|}}
-<div class="">
-  <ul>{{food.food}}</ul>
-  <form class="" action="index.html" method="post">
-    {{food.quantity}}
-  </form>
+<div class="button-wrapper">
+  <button {{action "makeShoppingList"}}type="button" class="btn btn-default list-button" name="button">Make Shopping List</button>
 </div>
-{{/each}}
 
-{{#each model.recipes as |recipe|}}
-  <ul>
-    {{recipe.recipe}}
-    {{recipe.ingredients}}
-  </ul>
-{{/each}}
+<div class="label-wrap">
+  <div class="inv-label">
+    <h3>Inventory</h3>
+  </div>
+  <div class="recipe-label">
+    <h3>Recipes</h3>
+  </div>
+  <div class="shop-label">
+    <h3>Shopping List</h3>
+  </div>
+
+</div>
 
 
-{{#each list as |list|}}
- <ul>
-   {{list.name}}
-   {{list.quantity}}
- </ul>
-{{/each}}
+<div class="wrapper">
+
+  <div class="food">
+    {{#each model.foods as |food|}}
+      <div class="card list-cards">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{food.food}}</li>
+          <li class="list-group-item">{{food.quantity}}</li>
+        </ul>
+      </div>
+    {{/each}}
+  </div>
+
+  <div class="recipe">
+    {{#each model.recipes as |recipe|}}
+    <div class="card list-cards">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{recipe.recipe}}</li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="list">
+    {{#each list as |list|}}
+    <div class="card list-cards">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{list.name}}</li>
+        <li class="list-group-item">{{list.quantity}}</li>
+      </ul>
+    </div>
+    {{/each}}
+  </div>
+
+</div>
