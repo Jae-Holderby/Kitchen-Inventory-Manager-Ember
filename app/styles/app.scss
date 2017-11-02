@@ -1,19 +1,30 @@
 @import "ember-bootstrap/bootstrap";
 
-$primary-color: #D0CDD7;
-$nav-color: #0B3948;
-$nav-font-color: #D0CDD7;
-$list-button-color: #0B3948;
-$list-button-font-color: #D0CDD7;
-$box-color: #ACB0BD;
+$primary-color: #FFFFFF;
+$nav-color: #0E8A64;
+$nav-font-color: #FFFFFF;
+$list-button-color: #0E8A64;
+$list-button-font-color: #FFFFFF;
+$box-color: #ABC2B5;
 $primary-font-color: #FFFFFF;
-$card-selected-color: #0B3948;
-$card-unselected-color: #D0CDD7;
-$card-unselected-font: #0B3948;
+$card-selected-color: #0E8A64;
+$card-unselected-color: #FFFFFF;
+$card-unselected-font: #0E8A64;
 $primary-font-size: 1.5em;
 
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+  opacity: .7;
+}
+
 body {
-  background-color: $primary-color;
+
 }
 
 h1 {
@@ -103,6 +114,11 @@ h3 {
   max-height: 80vh;
   overflow-x: hidden;
   background-color: $box-color;
+  opacity: .95;
+  border-style: solid;
+  border-width: medium;
+  border-color: $nav-color;
+  border-radius: 1vh;
 }
 
 .recipe {
@@ -116,6 +132,11 @@ h3 {
   max-height: 80vh;
   overflow-x: hidden;
   background-color: $box-color;
+  opacity: .95;
+  border-style: solid;
+  border-width: medium;
+  border-color: $nav-color;
+  border-radius: 1vh;
 }
 .unselected-recipe-card {
   background-color: $card-unselected-color !important;
@@ -133,6 +154,11 @@ h3 {
   max-height: 80vh;
   overflow-x: hidden;
   background-color: $box-color;
+  opacity: .95;
+  border-style: solid;
+  border-width: medium;
+  border-color: $nav-color;
+  border-radius: 1vh;
 }
 
 .list-group-item {
