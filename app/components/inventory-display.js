@@ -2,8 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   list: [],
+  itemQuantity: ['quantity'],
   sortValueType: ['food'],
   inventorySort: Ember.computed.sort('model.foods', "sortValueType"),
+  
 
   // socketIOService: Ember.inject.service('socket-io'),
   // room: 'inventory',
