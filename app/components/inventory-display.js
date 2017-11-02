@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   list: [],
+  sortValueType: ['food'],
+  inventorySort: Ember.computed.sort('model.foods', "sortValueType"),
 
   // socketIOService: Ember.inject.service('socket-io'),
   // room: 'inventory',
@@ -64,7 +66,6 @@ export default Ember.Component.extend({
           }
         })
       })
-      console.log(selectedFoods);
       var shoppingList = []
       selectedFoods.forEach((food, i) => {
          var quantity = food.quantity - selectedIngredients[i].quantity
@@ -72,11 +73,30 @@ export default Ember.Component.extend({
            shoppingList.push({
              id: food.id,
              name: food.name,
+             type: food.type,
              quantity: quantity * -1
            })
         }
       })
-      this.set('list', shoppingList)
+      var sortedShoppingList = shoppingList.sort(function(a, b){
+        var itemA = a.type
+        var itemB = b.type
+        return (itemA < itemB) ? -1 : (itemA > itemB) ? 1 : 0
+      })
+      var newShoppingList = sortedShoppingList.reduce(function(list, item){
+          var added = false
+          list.forEach(function(food, i) {
+            if (food.name === item.name){
+              list[i].quantity += item.quantity
+              added = true
+            }
+          })
+          if (!added){
+            list.push(item)
+          }
+          return list
+      }, [])
+      this.set('list', newShoppingList)
     }
   }
 });
