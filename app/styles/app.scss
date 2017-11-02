@@ -6,7 +6,10 @@ $nav-font-color: #D0CDD7;
 $list-button-color: #0B3948;
 $list-button-font-color: #D0CDD7;
 $box-color: #ACB0BD;
-$primary-font-color: #D0CDD7;
+$primary-font-color: #FFFFFF;
+$card-selected-color: #0B3948;
+$card-unselected-color: #D0CDD7;
+$card-unselected-font: #ACB0BD;
 $primary-font-size: 1.5em;
 
 body {
@@ -78,8 +81,16 @@ h3 {
 }
 
 .list-button:hover {
-
+  background-color: $box-color;
+  color: $nav-color;
 }
+
+.list-button:focus {
+  background-color: $box-color;
+  color: $nav-color;
+}
+
+
 
 .food {
   padding: 3vh;
@@ -107,7 +118,8 @@ h3 {
   background-color: $box-color;
 }
 .unselected-recipe-card {
-  background-color: blue !important;
+  background-color: $card-unselected-color !important;
+  color: $card-unselected-font;
 }
 
 .list {
@@ -126,7 +138,7 @@ h3 {
 .list-group-item {
   display: flex;
   justify-content: center;
-  background-color: $list-button-color;
+  background-color: $card-selected-color;
 }
 .list-cards {
   width: 25vw;
