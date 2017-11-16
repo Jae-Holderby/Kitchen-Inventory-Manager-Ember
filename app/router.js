@@ -12,8 +12,7 @@ Router.map(function() {
   this.route('ingredients')
   this.route('recipes')
   this.route('foods')
-
-
+  this.route('recipe', {path: '/recipes/:id'});
 });
 
 export default Router;
