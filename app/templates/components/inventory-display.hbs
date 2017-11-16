@@ -1,6 +1,6 @@
 
 <div class="button-wrapper">
-  <button {{action "makeShoppingList"}}type="button" class="btn btn-default list-button" name="button">Make Shopping List</button>
+  <button {{action "makeShoppingList"}}type="button" class="btn btn-default list-button" name="button">Make List</button>
 </div>
 
 <div class="label-wrap">
@@ -24,7 +24,7 @@
       <div class="card list-cards">
         <ul class="list-group list-group-flush ">
           <li class="list-group-item {{if food.quantity '' 'unselected-recipe-card'}}">{{food.food}}</li>
-          <li class="list-group-item {{if food.quantity '' 'unselected-recipe-card'}}">{{food.quantity}}</li>
+          <li class="list-group-item unselected-recipe-card">{{food.quantity}}</li>
         </ul>
       </div>
     {{/each}}
