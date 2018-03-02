@@ -46,6 +46,7 @@ nav {
 }
 
 .label-wrap {
+  width: 100%;
   padding-left: 3vh;
   padding-right: 3vh;
   display: flex;
@@ -55,7 +56,10 @@ nav {
 }
 
 h3 {
-  font-size: 5vh;
+  font-size: 4.5vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .inv-label {
   display: flex;
@@ -161,9 +165,11 @@ h3 {
 }
 
 .list-group-item {
+  width: 100%;
   display: flex;
   justify-content: center;
   background-color: $card-selected-color;
+  overflow: hidden;
 }
 .list-cards {
   width: 25vw;

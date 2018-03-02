@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   itemQuantity: ['quantity'],
   sortValueType: ['food'],
   inventorySort: Ember.computed.sort('model.foods', "sortValueType"),
-  
+  clicked: false,
 
   // socketIOService: Ember.inject.service('socket-io'),
   // room: 'inventory',
@@ -99,6 +99,13 @@ export default Ember.Component.extend({
           return list
       }, [])
       this.set('list', newShoppingList)
+    },
+
+    toggleClick: function(){
+      console.log(this.get('recipe'))
     }
-  }
+  },
+
+
+
 });

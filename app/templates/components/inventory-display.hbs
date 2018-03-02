@@ -34,13 +34,15 @@
     {{#each model.recipes as |recipe|}}
     {{#link-to 'recipe' recipe.id}}
     <div class="card list-cards">
-      <ul class="list-group list-group-flush ">
-        <li class="list-group-item {{if recipe.selected '' 'unselected-recipe-card'}}">{{recipe.recipe}}</li>
+      <ul class="list-group list-group-flush">
+        <li {{action "toggleClick"}} class="list-group-item {{if recipe.selected '' 'unselected-recipe-card'}}">{{recipe.recipe}}</li>
       </ul>
     </div>
     {{/link-to}}
     {{/each}}
-    {{outlet}}
+    <div class="">
+      {{outlet}}
+    </div>
   </div>
 
 
